@@ -285,7 +285,7 @@ public :
    Long64_t MaxEvt;
    Long64_t FirstEvt;
    TH1D *hcount;
-   TH1F *htgem_nhits, *hmmg1_nhits, *hgt1_nhits, *hgt2_nhits, *hgt3_nhits, *hurw_nxhits, *hurw_nyhits;
+   TH1F *htgem_nhits, *hmmg1_nhits, *hgt1_nhits, *hgt2_nhits, *hurw_nxhits, *hurw_nyhits;
    //TH1D *hNTracks, *hNTracks_e, *hNTracks_pi;
 /*   TH1F *hCal_occ;
    TH1F *hCal_pulse, *hPresh_pulse, *hMult_pulse, *hCher_pulse;
@@ -312,8 +312,10 @@ public :
    
    TH2F *htgem_xy, *hmmg1_xy, *htgem_max_xy, *hmmg1_max_xy;
    TH2F *tgem_mmg1_xcorr, *tgem_mmg1_ycorr, *urw_tgem_xcorr, *urw_mmg1_xcorr;
-   TH2F *tgem_gt1_xcorr, *tgem_gt2_xcorr, *tgem_gt3_xcorr, *mmg1_gt1_xcorr, *mmg1_gt2_xcorr, *mmg1_gt3_xcorr, *urw_gt1_xcorr, *urw_gt2_xcorr, *urw_gt3_xcorr;
+   TH2F *tgem_gt1_xcorr, *tgem_gt2_xcorr, *mmg1_gt1_xcorr, *mmg1_gt2_xcorr, *urw_gt1_xcorr, *urw_gt2_xcorr;
    TH2F *tgem_mmg1_max_xcorr, *tgem_urw_max_xcorr, *urw_mmg1_max_xcorr;
+   TH2F *hgemtrkr_max_xcorr, *hgemtrkr_max_ycorr;
+   TH1F *hgemtrkr_1D_xcorr, *hgemtrkr_1D_ycorr;
    TH1F *hgemClusterDiff_el, *hmmg1ClusterDiff_el, *hurwClusterDiff_el;
    TH1F *hgemPulseDiff_el, *hmmg1PulseDiff_el, *hurwPulseDiff_el, *hurwPulseDiff_mmg;
    TH1F *hTrackDiff;
@@ -321,13 +323,13 @@ public :
    TH1F *hmmg1ClusterMaxdEdx_el, *hmmg1ClusterTotaldEdx_el;
    TH1F *hurwClusterMaxdEdx_el, *hurwClusterTotaldEdx_el;
    
-   TH1F *hgemtrkr_1_peak_x, *hgemtrkr_1_peak_y, *hgemtrkr_2_peak_x, *hgemtrkr_2_peak_y, *hgemtrkr_3_peak_x, *hgemtrkr_3_peak_y, *mmg1_peak_y, *tgem_peak_y;
-   TH1F *hgemtrkr_1_peak_x_height, *hgemtrkr_1_peak_y_height, *hgemtrkr_2_peak_x_height, *hgemtrkr_2_peak_y_height, *hgemtrkr_3_peak_x_height, *hgemtrkr_3_peak_y_height, *hmmg1_peak_y_height, *htgem_peak_y_height;
+   TH1F *hgemtrkr_1_peak_x, *hgemtrkr_1_peak_y, *hgemtrkr_2_peak_x, *hgemtrkr_2_peak_y, *mmg1_peak_y, *tgem_peak_y;
+   TH1F *hgemtrkr_1_peak_x_height, *hgemtrkr_1_peak_y_height, *hgemtrkr_2_peak_x_height, *hgemtrkr_2_peak_y_height, *hmmg1_peak_y_height, *htgem_peak_y_height;
    //TH1F *hmmg1_peak_y_height_el, *htgem_peak_y_height_el;
-   TH2F *hgemtrkr_1_peak_xy, *hgemtrkr_2_peak_xy, *hgemtrkr_3_peak_xy;
-   TH2F *hgemtrkr_1_max_xy, *hgemtrkr_2_max_xy, *hgemtrkr_3_max_xy;
+   TH2F *hgemtrkr_1_peak_xy, *hgemtrkr_2_peak_xy;
+   TH2F *hgemtrkr_1_max_xy, *hgemtrkr_2_max_xy;
    TH2F *hgemtrkr_1_tgem, *hgemtrkr_1_mmg1;
-   TH1F *hgemtrkr_1_max_xch, *hgemtrkr_1_max_xamp, *hgemtrkr_2_max_xch, *hgemtrkr_2_max_xamp, *hgemtrkr_3_max_xch, *hgemtrkr_3_max_xamp;
+   TH1F *hgemtrkr_1_max_xch, *hgemtrkr_1_max_xamp, *hgemtrkr_2_max_xch, *hgemtrkr_2_max_xamp;
    
    TH1F *f125_el, *f125_el_max, *f125_el_max_late;
    TH2F *f125_el_amp2d, *f125_el_raw;
@@ -339,8 +341,8 @@ public :
    TH2F *urw_f125_x_amp2d, *urw_f125_x_amp2ds, *urw_f125_y_amp2d, *urw_f125_y_amp2ds, *hurw_xy, *hurw_max_xy;
    TH2F *mmg1_f125_fit, *urw_f125_fit;
    TH2F *f125_xVSamp, *mmg1_f125_xVSamp, *urw_f125_xVSamp, *urw_f125_yVSamp;
-   TH2F *f125_xVSamp_max, *mmg1_f125_xVSamp_max, *urw_f125_xVSamp_max;
-   TH2F *f125_timeVSamp, *f125_timeVSamp_max, *mmg1_f125_timeVSamp, *mmg1_f125_timeVSamp_max, *urw_f125_x_timeVSamp, *urw_f125_x_timeVSamp_max;
+   TH2F *f125_xVSamp_max, *mmg1_f125_xVSamp_max, *urw_f125_xVSamp_max, *urw_f125_yVSamp_max;
+   TH2F *f125_timeVSamp, *f125_timeVSamp_max, *mmg1_f125_timeVSamp, *mmg1_f125_timeVSamp_max, *urw_f125_x_timeVSamp, *urw_f125_x_timeVSamp_max, *urw_f125_y_timeVSamp, *urw_f125_y_timeVSamp_max;
    
    //TH2F *gem_el_eff, *gem_pi_eff, *mmg1_el_eff, *mmg1_pi_eff;
    TH2F *tgem_mmg1_doubleX, *tgem_mmg1_doubleY;
@@ -506,9 +508,9 @@ trdclass_ps26::trdclass_ps26(int RunNum_in, int MaxEvt_in=0,  int FirstEvt_in=0,
    if (tree == 0) {
      char FileName[128];
      if (FileNum!=-1) {
-      sprintf(FileName,"ROOT/Run_%06d_%03d.root",RunNum,FileNum);
+      sprintf(FileName,"ROOT/Run_%06d_%03d_events.root",RunNum,FileNum);
      } else {
-      sprintf(FileName,"ROOT/Run_%06d.root",RunNum);
+      sprintf(FileName,"ROOT/Run_%06d_events.root",RunNum);
      }
      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(FileName);
       if (!f || !f->IsOpen()) {
